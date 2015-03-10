@@ -10,7 +10,7 @@ i=0
 
 if [ -z "$4" ]
   then
-	echo "You need two Arguments. Folder, cylcles, size and type(zero/urnd)."
+	echo "You need four Arguments. Folder, cylcles, size and type(zero/urnd)."
 	echo "Example: $0 /tmp 50 5 urnd"
 	echo "Fills /tmp with 50 files each 5MB and urandom data."
 	exit 1
