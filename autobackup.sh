@@ -4,6 +4,12 @@ bkprootdir="."
 snapdir="snap"
 bkpname="bkpexample"
 srcdir="/srcexample"
+checkfile="$srcdir/checkfile"
+
+if [ ! -f $checkfile ]; then
+	echo -e "\n  -> Error, $checkfile does not exists! Wrong backup system? \n\n"
+	exit 4
+fi
 
 /usr/bin/rsync -a --delete --progress --exclude-from $srcdir/rsyncexcludes.txt --log-file ./logs/log_$timestmp.txt $srcdir $bkprootdir/$bkpname/
 if [ "$?" -eq "0" ]; then
