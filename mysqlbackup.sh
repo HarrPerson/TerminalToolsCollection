@@ -22,7 +22,7 @@ do
 	FILENAME=$BACKUPFILE-$db.sql
 	echo "---------------------------------------------------"
 	echo "SQLDUMP to $FILENAME"
-	$MYSQLDUMP -ignore-table=mysql.event --skip-lock-tables --user=$MUSER --password=$MPASS --host=$MHOST $db > $FILENAME
+	$MYSQLDUMP --ignore-table=mysql.event --skip-lock-tables --user=$MUSER --password=$MPASS --host=$MHOST $db > $FILENAME
 	echo "ZIP FILE"
 	$ZIPBIN a $FILENAME.7z $FILENAME
 	rm -f $FILENAME
